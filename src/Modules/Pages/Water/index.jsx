@@ -25,6 +25,8 @@ function Water() {
       }
 
     const [data,setData]=useState(rows)
+    
+    // Tim du lieu trong khoang
     const handleData=()=>{
         setData([])
       const a =  rows.map((row,index)=>{

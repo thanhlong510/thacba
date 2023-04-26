@@ -39,7 +39,7 @@ function Report () {
         sheet.getCell('F4').value='Yên Bái, ngày...tháng...năm'
         sheet.getCell('F4').font={
             italic:true,
-            size:2,
+            size:12,
 
         }
         sheet.getCell('A11').value='TT',
@@ -146,21 +146,20 @@ function Report () {
           const saveDate=new Date(data) 
           setSecondDate(saveDate)
     }
-
     const handleFinding =()=>{
         if(type&&firstDate&&secondDate){
             setExport(true)
+            //Tim cam bien
             handleTypeSenSor(titleSensor)
         }
     }
     const handleTypeSenSor =(type)=>{
         
         const a = rows.filter(row=>{
-            
             return row.tenong ==type
-            
         })
-        console.log(a.length)
+
+        // Tim ngay thang nam
         const b =[]
         a.map((_=>{
             b.push(_)
