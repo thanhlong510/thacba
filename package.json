@@ -1,0 +1,41 @@
+{
+  "name": "thacba-fe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0 --port 3000 --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.12.1",
+    "@mui/x-data-grid": "^6.2.1",
+    "@mui/x-data-grid-pro": "^6.2.1",
+    "@mui/x-date-pickers": "^6.2.1",
+    "@tippyjs/react": "^4.2.6",
+    "chart.js": "^4.2.1",
+    "date-fns": "^2.29.3",
+    "dayjs": "^1.11.7",
+    "exceljs": "^4.3.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "^5.0.1",
+    "react-tippy": "^1.4.0",
+    "tippy.js": "^6.3.7",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "sass": "^1.60.0",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.2.0"
+  }
+}
