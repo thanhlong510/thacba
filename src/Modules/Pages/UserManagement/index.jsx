@@ -328,7 +328,6 @@ function UserManagement() {
             </Button>
           </Grid>
         </Grid>
-        Kiem tra sua duoc chua
       </div>
     </div>
   )
