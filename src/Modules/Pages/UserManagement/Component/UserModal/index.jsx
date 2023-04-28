@@ -1,5 +1,5 @@
 function UserModal() {
-    return 
+  return
 }
 
-export default UserModal;
+export default UserModal

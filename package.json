@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy":"react-scripts build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "start": "vite --host 0.0.0.0 --port 3000 --open",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "npx prettier --write ."
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -23,6 +24,7 @@
     "date-fns": "^2.29.3",
     "dayjs": "^1.11.7",
     "exceljs": "^4.3.0",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
