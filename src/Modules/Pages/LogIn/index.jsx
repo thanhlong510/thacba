@@ -27,9 +27,10 @@ function LogIn({setAuth}) {
         />
         <hr></hr>
         <div className="mx-4">
-          <p className="text-red-600 text-lg flex ">
-            HỆ THỐNG GIÁM SÁT TỰ ĐỘNG CÔNG TRÌNH THỦY LỢI
+          <p className="text-red-600 text-lg flex mt-4 ">
+            HỆ THỐNG GIÁM SÁT TỰ ĐỘNG CÔNG TRÌNH 
           </p>
+          <div className='text-red-600 text-lg flex items-center justify-center'>THỦY LỢI</div>
           <p className="italic text-sm mt-4">Tên đăng nhập</p>
           <TextField className="w-full  mt-4" type="text" />
           <p className="italic mt-4 text-sm">Mật khẩu</p>
