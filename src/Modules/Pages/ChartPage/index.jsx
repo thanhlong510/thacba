@@ -41,7 +41,7 @@ function ChartPage({props}) {
         >
           {type === 3 ? titleSensor : 'Bờ phải'}
         </PopperButton>
-        <div className="ml-[100px] mr-14 flex">
+        <div className="ml-[100px] mr-10 flex">
           <span className="mr-1 text-black pt-1">Từ ngày:</span>
           <button>
             <DatePicker />

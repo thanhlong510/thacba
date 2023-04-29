@@ -133,7 +133,7 @@ function PopperButton({children, menus, name, checkTypeSensor}) {
           </div>
         )}
       >
-        <button className="shadow-card  boder-2 w-28 px-2 py-1 mr-6 rounded-full hover:bg-red-600 hover:text-gray-50 ">
+        <button className="shadow-card  boder-2 w-32 px-1 py-1 mr-3 rounded-full hover:bg-red-600 hover:text-gray-50 ">
           {children} <ChevronRightIcon />
         </button>
       </Tippy>

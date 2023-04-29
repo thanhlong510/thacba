@@ -246,7 +246,7 @@ function Report() {
 
   return (
     <div className="p-2">
-      <div className="wrapper flex text-blue-400 mb-5">
+      <div className="wrapper flex justify-between text-blue-400 mb-5">
         <PopperButton
           name={handleTitle}
           checkTypeSensor={handleType}
@@ -272,7 +272,7 @@ function Report() {
           {type === 3 ? titleSensor : 'Bờ phải'}
         </PopperButton>
 
-        <div className="ml-12">
+        <div className="ml-8">
           <span className="text-black pr-1 pt-[5px] ">Từ:</span>
           <button>
             <DatePicker setValue={handleFirstValue} />
@@ -288,7 +288,7 @@ function Report() {
 
         <button
           onClick={handleFinding}
-          className="border-[1px] border-sky-700 text-sky-700 rounded-full mr-1 p-1 px-1"
+          className="border-[1px] border-sky-700 text-sky-700 rounded-full p-1 px-1"
         >
           Tìm kiếm
         </button>
