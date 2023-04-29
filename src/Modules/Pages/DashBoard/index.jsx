@@ -2,6 +2,7 @@ import {Grid} from '@mui/material'
 import React, {useContext} from 'react'
 import {creatTitle} from '../../Components/App/index'
 function DashBoard({props}) {
+  
   useContext(creatTitle).handleTitle('Bảng tin')
   return (
     <div className="DashBoard m-7">

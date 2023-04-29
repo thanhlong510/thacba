@@ -4,14 +4,25 @@ import React, {useState} from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
+import { useRef } from 'react'
 
 function PopperButton({children, menus, name, checkTypeSensor}) {
+  const TippyRef=useRef(null)
   const [activeMenus, setActiveMenus] = useState([])
-
+  const [isHide,setIsHide]=useState(true)
+  
+  
+  const handleOnHide =()=>{
+    setActiveMenus([])
+    TippyRef.current.className ='flex flex-col w-48 max-h-45 bg-slate-100 border-2' // Phuc hoi Tippy
+  }
+  console.log(TippyRef)
   const handleArrowClick = (menuName, data, type) => {
-    //Kiểm tra xem mục nào được chọn để set lại cho button
+    //Kiểm tra xem khu vực cha nào được chọn để set lại cho button
     if (!data.children) {
+      
       name(data.title)
+      // setIsHide(false)
       if (type === 'factory') {
         checkTypeSensor(1)
       } else if (type === 'leftside') {
@@ -19,6 +30,9 @@ function PopperButton({children, menus, name, checkTypeSensor}) {
       } else if (type === 'rightside') {
         checkTypeSensor(3)
       }
+      TippyRef.current.className='display-none' // Xoa Tippy
+      
+      // a.hide()
     }
     // Xác định xem menu được nhấn xuống hay nhấn lên
     let newActiveMenus = [...activeMenus]
@@ -30,7 +44,7 @@ function PopperButton({children, menus, name, checkTypeSensor}) {
     } else {
       newActiveMenus.push(menuName)
     }
-
+   
     setActiveMenus(newActiveMenus)
   }
 
@@ -91,12 +105,16 @@ function PopperButton({children, menus, name, checkTypeSensor}) {
   return (
     <div className=" text-blue-400">
       <Tippy
+        
+      //  visible={true}
         interactive
         placement="bottom-start"
-        onHide={() => setActiveMenus([])}
+        onHidden={handleOnHide}  // xoa du lieu
+        // hideOnClick={isHide} 
         render={(attrs) => (
           <div
-            className="flex  flex-col w-48 max-h-45 bg-slate-100 border-2"
+            ref={TippyRef}
+            className="flex flex-col w-48 max-h-45 bg-slate-100 border-2"
             tabIndex="-1"
             {...attrs}
           >
@@ -115,7 +133,7 @@ function PopperButton({children, menus, name, checkTypeSensor}) {
           </div>
         )}
       >
-        <button className="shadow-card boder-2 w-28 px-2 py-1 mr-6 rounded-full hover:bg-red-600 hover:text-gray-50 ">
+        <button className="shadow-card  boder-2 w-28 px-2 py-1 mr-6 rounded-full hover:bg-red-600 hover:text-gray-50 ">
           {children} <ChevronRightIcon />
         </button>
       </Tippy>

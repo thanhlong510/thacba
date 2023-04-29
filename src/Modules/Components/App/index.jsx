@@ -24,8 +24,8 @@ function App() {
   const handleTitle = (giatri) => {
     setTitle(giatri)
   }
-  const [auth, setAuth] = useState(false)
-
+  const [auth, setAuth] = useState(true)
+ 
   if (!auth) return <LogIn setAuth={setAuth} />
   return (
     <creatTitle.Provider value={{handleTitle: handleTitle}}>
