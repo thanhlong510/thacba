@@ -17,7 +17,7 @@ function Side() {
       <Link to="/map/factory">
         <button
           className={
-            'uppercase border-2 m-4 rounded-full w-32 ' +
+            'uppercase border-2 shadow-card py-1 m-4 rounded-full w-32 ' +
             (params.section ? 'bg-white' : 'bg-red-600')
           }
         >
@@ -25,12 +25,13 @@ function Side() {
           {params.section}{' '}
         </button>
       </Link>
-      {sectionInfor.map((b) => {
+      {sectionInfor.map((b,index) => {
         return (
-          <Link to={'/map/' + params.section + b.link}>
+          <Link  to={'/map/' + params.section + b.link}>
             <button
+              
               className={
-                'uppercase border-2 m-4 w-32 rounded-full ' +
+                'uppercase border-2 shadow-card py-1 m-4 w-32 rounded-full ' +
                 (params.side === b.name ? 'bg-red-600' : 'bg-white')
               }
             >

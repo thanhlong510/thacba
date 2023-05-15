@@ -16,15 +16,15 @@ function Section() {
       }}
     >
       <Link>
-        <button className=" uppercase border-2 m-4 bg-red-600 rounded-full w-32  ">
+        <button className=" uppercase border-2 m-4 shadow-card py-1 bg-red-600 rounded-full w-32  ">
           {' '}
           {params.section}{' '}
         </button>
       </Link>
-      {sectionInfor.map((b) => {
+      {sectionInfor.map((b,index) => {
         return (
           <Link to={'/map/' + params.section + b.link}>
-            <button className="border-2 m-4 bg-slate-50 rounded-full w-32">
+            <button className="border-2 m-4 shadow-card py-1 bg-slate-50 rounded-full w-32">
               {b.title}
             </button>
           </Link>

@@ -8,7 +8,6 @@ import PersonIcon from '@mui/icons-material/Person'
 import AssignmentIcon from '@mui/icons-material/Assignment'
 import MapIcon from '@mui/icons-material/Map'
 
-
 const LeftBar = (props) => {
   const generate = (index) => {
     switch (index) {

@@ -1,10 +1,12 @@
 import React, {useRef} from 'react'
-
+import dayjs from 'dayjs';
 const DatePicker = ({setValue}) => {
   const dateInputRef = useRef(null)
   const handleChange = (e) => {
-    setValue(e.target.value)
+    setValue( Date.parse( e.target.value))
+    console.log(Date.parse(e.target.value))
   }
+ 
   return (
     <div>
       <input
@@ -12,6 +14,7 @@ const DatePicker = ({setValue}) => {
         type="date"
         onChange={handleChange}
         ref={dateInputRef}
+        placeholder={dayjs(new Date())}
       />
     </div>
   )

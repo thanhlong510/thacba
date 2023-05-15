@@ -13,68 +13,7 @@ const PAGE_SIZE = 10
 
 // Do need to add the number order. Adjust the row in a page by changing PAGE_SIZE above
 function StyledTable({datas, header}) {
-  const columns = [
-    {
-      field: 'stt',
-      headerName: 'STT',
-      minWidth: 40,
-      flex: 1,
-      sortable: false,
-      disableColumnMenu: true,
-      headerAlign: 'center',
-      headerClassName: ' super-app-theme--header',
-    },
-    {
-      field: 'time',
-      headerName: 'Thời gian',
-      minWidth: 50,
-      flex: 2,
-      sortable: false,
-      disableColumnMenu: true,
-      headerAlign: 'left',
-      headerClassName: 'super-app-theme--header',
-    },
-    {
-      field: 'mucthuongluu',
-      headerName: 'Mức Thượng Lưu (M)',
-      minWidth: 180,
-      flex: 2,
-      sortable: false,
-      disableColumnMenu: true,
-      headerAlign: 'left',
-      headerClassName: 'super-app-theme--header',
-    },
-    {
-      field: 'nguongthuongluu',
-      headerName: 'Ngưỡng Thượng Lưu (M)',
-      minWidth: 190,
-      flex: 2,
-      sortable: false,
-      disableColumnMenu: true,
-      headerAlign: 'left',
-      headerClassName: 'super-app-theme--header',
-    },
-    {
-      field: 'muchaluu',
-      headerName: 'Mức Hạ Lưu (M)',
-      minWidth: 50,
-      flex: 2,
-      sortable: false,
-      disableColumnMenu: true,
-      headerAlign: 'left',
-      headerClassName: 'super-app-theme--header',
-    },
-    {
-      field: 'nguonghaluu',
-      headerName: 'Ngưỡng Hạ Lưu (M)',
-      minWidth: 50,
-      flex: 2,
-      sortable: false,
-      disableColumnMenu: true,
-      headerAlign: 'left',
-      headerClassName: 'super-app-theme--header',
-    },
-  ]
+
   const [paginationModel, setPaginationModel] = useState({
     pageSize: PAGE_SIZE,
     page: 0,
@@ -92,7 +31,7 @@ function StyledTable({datas, header}) {
         page={page + 1}
         count={pageCount}
         renderItem={(props2) => <PaginationItem {...props2} disableRipple />}
-        onChange={(event, value) => apiRef.current.setPage(value - 1)}
+        onChange={(value) => apiRef.current.setPage(value - 1)}
       />
     )
   }

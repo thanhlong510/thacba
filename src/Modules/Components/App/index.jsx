@@ -12,6 +12,7 @@ import Report from '../../Pages/Report'
 import Water from '../../Pages/Water'
 import LogIn from '../../Pages/LogIn'
 
+
 export const dangnhap = createContext()
 export const creatTitle = createContext()
 
@@ -25,7 +26,7 @@ function App() {
     setTitle(giatri)
   }
   const [auth, setAuth] = useState(true)
- 
+
   if (!auth) return <LogIn setAuth={setAuth} />
   return (
     <creatTitle.Provider value={{handleTitle: handleTitle}}>
@@ -36,7 +37,7 @@ function App() {
             ' h-screen ' + (toggleBar == false ? 'nav-bar' : 'second-nav')
           }
         >
-          <Nav title={title} setToggleBar={handleToggle} />
+          <Nav className="text-lg" title={title} setToggleBar={handleToggle} />
           <div className="Content mt-1 overflow-auto ">
             <Routes>
               <Route path="/" element={<DashBoard />} />

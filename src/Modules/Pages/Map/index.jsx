@@ -20,14 +20,14 @@ function Map() {
     >
       <Link to="/map">
         {' '}
-        <button className="uppercase boder-2  m-4 w-32 bg-red-600 rounded-full">
+        <button className="uppercase boder-2 shadow-card py-1 m-4 w-32 bg-red-600 rounded-full">
           Tổng quan
         </button>
       </Link>
-      {buttonName.map((x) => {
+      {buttonName.map((x,index) => {
         return (
-          <Link to={x.link}>
-            <button className=" uppercase boder-2 w-32 m-4 rounded-full bg-slate-50">
+          <Link key={index} to={x.link}>
+            <button className=" uppercase boder-2 shadow-card py-1 w-32 m-4 rounded-full bg-slate-50">
               {x.title}
             </button>
           </Link>

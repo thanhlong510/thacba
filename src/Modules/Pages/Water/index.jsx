@@ -4,6 +4,25 @@ import React, {useContext, useState} from 'react'
 import StyledTable from './Components/StyledTable'
 import {rows, columns} from './Shared'
 import TextField from '@mui/material/TextField'
+import { useEffect } from 'react'
+
+const toDataURL = (url) => {
+  const promise = new Promise((resolve, reject) => {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      var reader = new FileReader();
+      reader.readAsDataURL(xhr.response);
+      reader.onloadend = function () {
+        resolve({ base64Url: reader.result });
+      };
+    };
+    xhr.open("GET", url);
+    xhr.responseType = "blob";
+    xhr.send();
+  });
+
+  return promise;
+};
 
 function Water() {
   useContext(creatTitle).handleTitle('Dữ liệu mực nước')
@@ -12,6 +31,7 @@ function Water() {
   const [highData, setHighData] = useState('') // Gia tri nhap vao
   const [lowData, setLowData] = useState('')
   const [data, setData] = useState(rows) // gia tri de hien thi tren table
+ 
 
   const handleFirstValue = (data) => {
     const saveDate = new Date(data)
@@ -85,7 +105,7 @@ function Water() {
         </div>
         <button className="border-1 h-3/5 mt-5 py-1 px-4 text-white bg-sky-500 rounded-full">
           Lưu giá trị
-        </button>       
+        </button>
       </div>
 
       <StyledTable datas={data} header={columns} />
