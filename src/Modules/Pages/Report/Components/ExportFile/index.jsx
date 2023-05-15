@@ -229,13 +229,6 @@ function ExportFile({isExport, chartBase64, data}) {
           )
           
        
-        // Lấy ảnh từ base64
-        var imagethu = workbook.addImage({ 
-            base64: myBase64Image,
-            extension: 'png',
-        })
-        sheet.addImage(imagethu, 'A110:I124');
-        sheet.mergeCells('A110','I124')
 
          // b là chiều dài của data để vẽ border
          for (var i = 1; i <= 9; i++) {
